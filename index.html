@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js"></script> 
+    <title>Kódování</title>
+</head>
+<body>
+    <h1>Kodovani</h1>
+    
+    
+    <form id="form">
+        <label for="array">Zadej hodnoty oddělené čárkou, např: 0.03,0.01,0.09,0.01,0.17,0.01,0.04,0.01,0.29,0.03,0.3,0.01</label><br />
+        <input id="array" type="text" style="width:400px"/> <br />
+        <label for="errval">Zadej pravděpodobnost chyby</label><br />
+        <input id="errval" type="text" style="width:400px"/><br />
+        <label for="code">Zadej 1chyb kód</label><br />
+        <input id="errcode" type="text" style="width:400px" />
+        <input type="submit" />
+    </form>
+    
+    <h2>Entropie</h2>
+    <img src="./entropy.png" alt="Entropy Formula" height="100px"/>
+    <b style="color:red">Entropie = </b><b id="entropy" style="color:red"></b>
+
+    <h2>Relativní entropie</h2>
+    <img src="./rel_entropy.png" alt="Relative entropy Formula" height="100px"/>
+    <b style="color:red">Relativní entropie = </b><b id="rel_entropy" style="color:red"></b>
+
+    <h2>Fanův kód</h2>
+    <p>Jsem moc línej tohle implementovat, protože to je pain a existuje na to <a href="https://planetcalc.com/8168/">stránka</a></p>
+    <p>Na stránce smazat vše co tam je, pak dát import a použít cheat kousek níž</p>
+    <ol>
+        <li>Seřadíme prvky od nejvyšší po nejnižší</li>
+        <li>Vezmu nejvyšší a nejnižší hodnotu, přičítám k nejnižší hodnotě, dokud není vyšší než nejvyšší, přičtu k nejvyšší a opakuju, dokud mám čísla</li>
+        <li>Z těch čísel co dostanu to opakuju, dokud nebudu mít jen jednoprvkové časti</li>
+        <li>K<sub>F</sub>=Suma všech prvků co jsem musel napsat (bez těch vstupních)</li>
+    </ol>
+    <br />
+    <b style="color:red">Cheat na stránku: </b><pre id="cheat" style="color:red"></pre>
+
+    <h2>Huffmanův kód</h2>
+    <p>Stejnej případ jako u Fanova kódu, tady je <a href="https://planetcalc.com/2481/">stránka</a>, použíjte cheat úplně stejně</p>
+    <ol>
+        <li>Najdu 2 nejnižší pravděpodobnosti (počítaj se i počáteční i už spočítaný)</li>
+        <li>K<sub>H</sub>=Suma všech prvků co jsem musel napsat (bez těch vstupních, přičítám i jedničku na konci)</li>
+    </ol>
+
+    <h2>Oprava kódů</h2>
+    <b style="color:red">Oprava = </b><b id="repair" style="color:red"></b>
+    <p>2chybný kód stačí vzít ten broken kód co nám dal a změnit jakoukoliv číslici, kromě té co už je jako chyba</p>
+    <p>Zas klidně zadat a přepočítá se Oprava</p>
+
+    <h2>Kapacita</h2>
+    <img src="./capacity.png" alt="Capacity Formula" width="400px"/>
+    <b style="color:red">Kapacita = </b><b id="capacity" style="color:red"></b>
+
+    <h2>Shannonova věta</h2>
+    <p>Ano vzorec je legit H/C (entropie/kapacita)</p>
+    <b style="color:red">Shannonova věta = </b><b id="shan" style="color:red"></b>
+
+</body>
+</html>
