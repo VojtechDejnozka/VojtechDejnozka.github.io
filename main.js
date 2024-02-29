@@ -15,7 +15,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
             sum += arr[i]
         }
         sum = Math.round(sum)
-        console.log(sum)
         if(sum != 1) {
             window.alert("Zkontrolujte vstup čísel, nezapomněli jste na něco?");
         }
@@ -28,6 +27,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     
             let rel_entropy = entropy / (Math.log2(arr.length));
             document.getElementById("rel_entropy").innerHTML = rel_entropy;
+            document.getElementById("redundancy").innerHTML = (1-rel_entropy);
             let str = ""
             for (let i = 0; i < arr.length; i++) {
                 str += (i + "," + arr[i] + "\n");
