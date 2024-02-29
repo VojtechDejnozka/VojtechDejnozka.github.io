@@ -14,6 +14,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
         for(let i=0; i<arr.length;i++) {
             sum += arr[i]
         }
+        sum = Math.round(sum)
+        console.log(sum)
         if(sum != 1) {
             window.alert("Zkontrolujte vstup čísel, nezapomněli jste na něco?");
         }
